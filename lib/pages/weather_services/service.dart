@@ -12,7 +12,8 @@ class WeatherServices {
   WeatherServices(this.api_key);
 
   Future<Weather> getweather(String cityName) async {
-    final Response = await http.get(Uri.parse(''));
+    final Response =
+        await http.get(Uri.parse('https://home.openweathermap.org/api_keys'));
 
     if (Response.statusCode == 200) {
       return Weather.fromJson(jsonDecode(Response.body));
